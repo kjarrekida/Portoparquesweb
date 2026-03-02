@@ -1,0 +1,198 @@
+/* === INSTITUCION === */
+.institucion__tabs {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.institucion__tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    background: var(--white-alpha-10);
+    color: var(--dark-200);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: var(--fw-semibold);
+    border: 1px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.institucion__tab:hover {
+    color: var(--green-400);
+    border-color: var(--white-alpha-20);
+}
+
+.institucion__tab--active {
+    background: var(--gradient-green);
+    color: var(--white);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow-green);
+}
+
+.institucion__content {
+    padding: var(--space-3xl);
+    min-height: 400px;
+}
+
+.institucion__title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: var(--fw-extrabold);
+    color: var(--white);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.institucion__text {
+    font-size: 1.05rem;
+    color: var(--dark-200);
+    line-height: 1.9;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Values Grid */
+.institucion__values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.institucion__value-card {
+    padding: var(--space-xl);
+    background: var(--white-alpha-10);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--white-alpha-10);
+    transition: all var(--transition-normal);
+}
+
+.institucion__value-card:hover {
+    border-color: var(--green-400);
+    transform: translateY(-4px);
+}
+
+.institucion__value-card h3 {
+    font-size: 1.1rem;
+    font-weight: var(--fw-bold);
+    color: var(--green-400);
+    margin-bottom: var(--space-sm);
+}
+
+.institucion__value-card p {
+    font-size: 0.9rem;
+    color: var(--dark-200);
+    line-height: 1.6;
+}
+
+/* Objectives */
+.institucion__objectives {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.institucion__objective {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background: var(--white-alpha-10);
+    border-radius: var(--radius-md);
+    color: var(--dark-100);
+    line-height: 1.6;
+    transition: all var(--transition-normal);
+}
+
+.institucion__objective:hover {
+    background: var(--white-alpha-20);
+    transform: translateX(4px);
+}
+
+.institucion__obj-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: var(--fw-black);
+    color: var(--green-400);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+/* Org Chart */
+.institucion__org {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.org-node {
+    padding: var(--space-md) var(--space-xl);
+    background: var(--white-alpha-10);
+    border: 1px solid var(--white-alpha-20);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-weight: var(--fw-semibold);
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.org-node:hover {
+    border-color: var(--green-400);
+    box-shadow: var(--shadow-glow-green);
+}
+
+.org-node--root {
+    background: var(--gradient-green);
+    border: none;
+    font-size: 1rem;
+    padding: var(--space-lg) var(--space-2xl);
+}
+
+.org-node--small {
+    font-size: 0.8rem;
+    padding: var(--space-sm) var(--space-md);
+}
+
+.org-level {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .institucion__tabs {
+        gap: var(--space-xs);
+    }
+
+    .institucion__tab {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.8rem;
+    }
+
+    .institucion__tab span {
+        display: none;
+    }
+
+    .institucion__content {
+        padding: var(--space-xl);
+    }
+
+    .institucion__values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .org-level {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,285 @@
+/* === CEMENTERIO PAGE === */
+
+/* Hero */
+.cementerio-hero__bg {
+    background: linear-gradient(135deg, #1a237e22 0%, #311b9222 50%, #4a148c22 100%);
+}
+
+/* Intro Section */
+.cementerio-intro__content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding: var(--space-2xl) var(--space-3xl);
+    background: var(--gradient-card);
+    border: 1px solid var(--white-alpha-10);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.cementerio-intro__accent-bar {
+    position: absolute;
+    left: 0;
+    top: var(--space-xl);
+    bottom: var(--space-xl);
+    width: 4px;
+    background: var(--gradient-green);
+    border-radius: var(--radius-full);
+}
+
+.cementerio-intro__text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--dark-100);
+}
+
+.cementerio-intro__text strong {
+    color: var(--green-400);
+}
+
+/* Service Cards Grid */
+.cementerio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.cementerio-card {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.cementerio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--card-accent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.cementerio-card:hover::before {
+    opacity: 1;
+}
+
+.cementerio-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    font-size: 1.5rem;
+    transition: all var(--transition-normal);
+}
+
+.cementerio-card:hover .cementerio-card__icon {
+    transform: scale(1.1);
+}
+
+.cementerio-card__title {
+    font-size: 1.15rem;
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.cementerio-card__desc {
+    font-size: 0.9rem;
+    color: var(--dark-200);
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.cementerio-card__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    color: var(--green-400);
+    font-weight: var(--fw-semibold);
+    width: fit-content;
+    margin-top: var(--space-sm);
+}
+
+/* Ubicación Section */
+.cementerio-ubicacion {
+    background: linear-gradient(180deg, transparent 0%, rgba(30, 30, 60, 0.15) 100%);
+}
+
+.cementerio-ubicacion__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-3xl);
+    overflow: hidden;
+}
+
+.cementerio-ubicacion__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: var(--fw-extrabold);
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-lg);
+}
+
+.cementerio-ubicacion__title-icon {
+    -webkit-text-fill-color: var(--green-400);
+    font-size: 1.3rem;
+}
+
+.cementerio-ubicacion__desc {
+    color: var(--dark-200);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+}
+
+.cementerio-ubicacion__desc strong {
+    color: var(--green-400);
+}
+
+.cementerio-ubicacion__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.cementerio-ubicacion__detail {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+}
+
+.cementerio-ubicacion__detail-icon {
+    color: var(--green-400);
+    font-size: 1.2rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.cementerio-ubicacion__detail strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 4px;
+}
+
+.cementerio-ubicacion__detail p {
+    color: var(--dark-200);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Map Placeholder */
+.cementerio-ubicacion__map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cementerio-ubicacion__map-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 400px;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, #1B5E2015 0%, #2E7D3215 50%, #43A04715 100%);
+    border: 2px dashed var(--white-alpha-10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-2xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.cementerio-ubicacion__map-placeholder:hover {
+    border-color: var(--green-400);
+    background: linear-gradient(135deg, #1B5E2025 0%, #2E7D3225 50%, #43A04725 100%);
+}
+
+.cementerio-ubicacion__map-icon {
+    font-size: 3rem;
+    color: var(--green-400);
+    animation: float 3s ease-in-out infinite;
+}
+
+.cementerio-ubicacion__map-placeholder span {
+    color: var(--white);
+    font-weight: var(--fw-bold);
+    font-size: 1.1rem;
+}
+
+.cementerio-ubicacion__map-address {
+    color: var(--dark-200) !important;
+    font-weight: var(--fw-regular) !important;
+    font-size: 0.9rem !important;
+}
+
+.cementerio-ubicacion__map-city {
+    color: var(--green-400) !important;
+    font-weight: var(--fw-semibold) !important;
+    font-size: 0.85rem !important;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .cementerio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cementerio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cementerio-intro__content {
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .cementerio-ubicacion__card {
+        grid-template-columns: 1fr;
+        padding: var(--space-2xl);
+    }
+
+    .cementerio-ubicacion__map-placeholder {
+        max-width: 300px;
+        aspect-ratio: auto;
+        padding: var(--space-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .cementerio-intro__content {
+        padding: var(--space-lg) var(--space-xl);
+    }
+
+    .cementerio-card {
+        padding: var(--space-xl);
+    }
+
+    .cementerio-ubicacion__card {
+        padding: var(--space-xl);
+    }
+}

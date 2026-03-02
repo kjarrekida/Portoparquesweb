@@ -1,0 +1,107 @@
+/* === SERVICIOS === */
+.servicios__block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    margin-bottom: var(--space-5xl);
+}
+
+.servicios__block:last-child {
+    margin-bottom: 0;
+}
+
+.servicios__block--reverse {
+    direction: rtl;
+}
+
+.servicios__block--reverse>* {
+    direction: ltr;
+}
+
+.servicios__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    border: 2px solid;
+    background: var(--white-alpha-10);
+    font-size: 1.6rem;
+    margin-bottom: var(--space-lg);
+}
+
+.servicios__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: var(--fw-extrabold);
+    margin-bottom: var(--space-md);
+}
+
+.servicios__desc {
+    color: var(--dark-200);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-xl);
+}
+
+.servicios__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.servicios__list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--dark-100);
+    font-size: 0.95rem;
+}
+
+.servicios__list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+/* Visual */
+.servicios__visual {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: url('/images/park-playground.png') center/cover no-repeat;
+}
+
+.servicios__visual-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.servicios__visual-icon {
+    font-size: 8rem;
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .servicios__block {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .servicios__block--reverse {
+        direction: ltr;
+    }
+
+    .servicios__visual {
+        aspect-ratio: 16/9;
+        max-height: 250px;
+    }
+}
