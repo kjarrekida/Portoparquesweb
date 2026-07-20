@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaTree, FaLock, FaUser } from 'react-icons/fa';
 import './Login.css';
 
-const BACKEND_URL = 'http://localhost:4000/api';
+const BACKEND_URL = import.meta.env.VITE_NODE_BACKEND_URL;
 
 const Login = () => {
     const [username, setUsername] = useState('');

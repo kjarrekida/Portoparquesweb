@@ -3,7 +3,7 @@ import { FaSearch, FaTree, FaCheckCircle, FaCalendarAlt, FaTimesCircle, FaArrowL
 import { useNavigate } from 'react-router-dom';
 import './RastreoCiudadano.css';
 
-const BACKEND_URL = 'http://localhost:4000/api';
+const BACKEND_URL = import.meta.env.VITE_NODE_BACKEND_URL;
 
 const RastreoCiudadano = () => {
     const [busqueda, setBusqueda] = useState('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ConsultaTramite.css';
 
-const BACKEND_URL = 'http://localhost:4000/api';
+const BACKEND_URL = import.meta.env.VITE_NODE_BACKEND_URL;
 
 const ConsultaTramite = () => {
     const [codigo, setCodigo] = useState('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaUserPlus, FaTrash, FaEdit, FaUserShield } from 'react-icons/fa';
 
-const BACKEND_URL = 'http://localhost:4000/api/admin';
+const BACKEND_URL = `${import.meta.env.VITE_NODE_BACKEND_URL}/admin`;
 
 const GestionUsuarios = () => {
     const [usuarios, setUsuarios] = useState([]);

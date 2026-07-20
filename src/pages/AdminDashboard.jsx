@@ -18,7 +18,7 @@ import AdminMapa from './AdminMapa';
 import GestionUsuarios from './GestionUsuarios';
 import './AdminDashboard.css';
 
-const BACKEND_URL = 'http://localhost:4000/api';
+const BACKEND_URL = import.meta.env.VITE_NODE_BACKEND_URL;
 
 const COLORS = ['#4caf50', '#ff9800', '#f44336', '#2196f3'];
 
