@@ -460,10 +460,14 @@
 }
 
 .actions-cell {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    align-items: center;
+    vertical-align: middle;
+}
+
+.actions-cell .action-btn {
+    margin-right: 8px;
+    margin-bottom: 4px;
+    display: inline-flex;
+    vertical-align: middle;
 }
 
 .action-btn {
