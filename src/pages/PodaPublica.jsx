@@ -702,8 +702,8 @@ export default function PodaPublica() {
                                                         style={{ height: '100%', width: '100%' }}
                                                     >
                                                         <TileLayer
-                                                            attribution='&copy; Esri'
-                                                            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                                                            attribution='&copy; Google Maps'
+                                                            url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
                                                         />
                                                         <MapClickHandler />
                                                         {coords && <Marker position={[coords.lat, coords.lng]} />}
