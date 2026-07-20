@@ -11,21 +11,12 @@ const navLinks = [
         label: 'Servicios',
         path: '/servicios',
         children: [
-            { path: '/servicios#areas-verdes', label: 'Áreas Verdes' },
+            { path: '/solicitud-servicios', label: 'Servicio de Poda/Tala' },
             { path: '/servicios#infraestructura', label: 'Infraestructura' },
-            { path: '/servicios#piletas', label: 'Piletas y Monumentos' },
             { path: '/cementerio', label: 'Cementerio' },
         ]
     },
-    {
-        label: 'Institución',
-        path: '/institucion',
-        children: [
-            { path: '/institucion#mision', label: 'Misión y Visión' },
-            { path: '/institucion#valores', label: 'Valores' },
-            { path: '/institucion#organigrama', label: 'Organigrama' },
-        ]
-    },
+    { path: '/institucion', label: 'Institución' },
     { path: '/transparencia', label: 'Transparencia' },
     { path: '/contacto', label: 'Contáctenos' },
 ]
@@ -96,13 +87,13 @@ export default function Navbar() {
                     </ul>
 
                     <div className="navbar__social">
-                        <a href="https://facebook.com/portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <a href="https://www.facebook.com/portoparques/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <FaFacebookF />
                         </a>
                         <a href="https://tiktok.com/@portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                             <FaTiktok />
                         </a>
-                        <a href="https://youtube.com/@portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <a href="https://www.youtube.com/@PortoparquesEPOficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                             <FaYoutube />
                         </a>
                         <a href="https://twitter.com/portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">

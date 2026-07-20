@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaLeaf, FaTools, FaWater, FaArrowRight, FaQuoteLeft, FaCalendarAlt } from 'react-icons/fa'
 import './Home.css'
@@ -46,6 +46,24 @@ const services = [
 
 const newsItems = [
     {
+        title: 'Convocatoria Pública: Deliberación Pública de Rendición de Cuentas 2025',
+        excerpt: 'La Empresa Pública Municipal de Portoparques convoca a la ciudadanía a la Deliberación Pública de Rendición de Cuentas del periodo fiscal 2025.',
+        date: '05 May 2026',
+        category: 'Rendición de Cuentas'
+    },
+    {
+        title: 'Convocatoria Pública: Asamblea Ciudadana para Rendición de Cuentas 2025',
+        excerpt: 'Se convoca a la ciudadanía a participar en la Asamblea Ciudadana para la elección de representantes de las comisiones mixtas de Rendición de Cuentas 2025.',
+        date: '11 Mar 2026',
+        category: 'Participación Ciudadana'
+    },
+    {
+        title: 'Consulta Ciudadana: Mesas Temáticas para Rendición de Cuentas',
+        excerpt: 'Se convoca a la ciudadanía a participar en la Consulta Ciudadana para definir temas y requerimientos sobre los cuales se rendirá cuentas.',
+        date: '11 Mar 2026',
+        category: 'Participación Ciudadana'
+    },
+    {
         title: 'Mantenimiento integral en el Parque La Rotonda',
         excerpt: 'Equipos de Portoparques realizaron trabajos de jardinería, pintura y limpieza general en el Parque La Rotonda.',
         date: '28 Feb 2026',
@@ -56,18 +74,6 @@ const newsItems = [
         excerpt: 'Se completó la rehabilitación del sistema hidráulico de las piletas ornamentales del Parque Las Vegas.',
         date: '22 Feb 2026',
         category: 'Infraestructura'
-    },
-    {
-        title: 'Jornada de arborización en el Parque El Mamey',
-        excerpt: 'Más de 200 árboles nativos fueron plantados en el Parque El Mamey como parte del programa de reforestación urbana.',
-        date: '15 Feb 2026',
-        category: 'Áreas Verdes'
-    },
-    {
-        title: 'Nuevo sistema de riego automatizado',
-        excerpt: 'Portoparques implementó un moderno sistema de riego automatizado que optimiza el uso del agua en los parques.',
-        date: '10 Feb 2026',
-        category: 'Tecnología'
     }
 ]
 
@@ -239,6 +245,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
         </div>
     )
 }

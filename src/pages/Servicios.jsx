@@ -6,11 +6,11 @@ const servicios = [
     {
         id: 'areas-verdes',
         icon: <FaLeaf />,
-        title: 'Generación y Mantenimiento de Áreas Verdes',
+        title: 'Mantenimiento de Áreas Verdes',
         color: '#4CAF50',
-        description: 'Nos encargamos del paisajismo, la poda ornamental, el control fitosanitario y el mantenimiento integral de todos los jardines, parques y espacios verdes de Portoviejo.',
+        description: 'Nos encargamos de la poda ornamental, el control fitosanitario y el mantenimiento integral de todos los jardines, parques y espacios verdes de Portoviejo.',
         items: [
-            { icon: <FaSeedling />, text: 'Paisajismo y diseño de jardines' },
+            { icon: <FaSeedling />, text: 'Mantenimiento de paisajismo y jardines' },
             { icon: <FaTree />, text: 'Poda ornamental y mantenimiento de árboles' },
             { icon: <FaLeaf />, text: 'Control fitosanitario y fumigación' },
             { icon: <FaCog />, text: 'Siembra y trasplante de especies' },
@@ -20,29 +20,15 @@ const servicios = [
     {
         id: 'infraestructura',
         icon: <FaTools />,
-        title: 'Arreglo de Infraestructura',
+        title: 'Reparación de Infraestructura',
         color: '#2196F3',
-        description: 'Realizamos trabajos de mantenimiento, reparación y mejora de la infraestructura de los parques, incluyendo juegos infantiles, mobiliario urbano y sistemas de riego.',
+        description: 'Realizamos trabajos de reparación, mantenimiento y mejora de la infraestructura de los espacios públicos, incluyendo zonas de recreación (juegos infantiles), cementerios, monumentos, fuentes ornamentales y mobiliario urbano.',
         items: [
-            { icon: <FaPaintBrush />, text: 'Pintura de juegos infantiles y mobiliario' },
+            { icon: <FaPaintBrush />, text: 'Pintura de juegos y mantenimiento de mobiliario' },
+            { icon: <FaWater />, text: 'Mantenimiento hidráulico de fuentes y piletas' },
             { icon: <FaTools />, text: 'Soldadura y reparación de estructuras' },
-            { icon: <FaCog />, text: 'Mantenimiento de sistemas de riego' },
-            { icon: <FaBolt />, text: 'Instalaciones eléctricas y alumbrado' },
-            { icon: <FaCheckCircle />, text: 'Inspección y certificación de seguridad' },
-        ]
-    },
-    {
-        id: 'piletas',
-        icon: <FaWater />,
-        title: 'Mantenimiento de Piletas y Monumentos',
-        color: '#00BCD4',
-        description: 'Nos especializamos en el mantenimiento eléctrico e hidráulico de las fuentes ornamentales, así como en la preservación y restauración de los monumentos históricos.',
-        items: [
-            { icon: <FaTint />, text: 'Mantenimiento hidráulico de fuentes' },
-            { icon: <FaBolt />, text: 'Sistemas eléctricos y de iluminación' },
-            { icon: <FaPaintBrush />, text: 'Restauración y conservación de monumentos' },
-            { icon: <FaCog />, text: 'Limpieza y tratamiento de agua' },
-            { icon: <FaCheckCircle />, text: 'Iluminación decorativa y programable' },
+            { icon: <FaBolt />, text: 'Instalaciones eléctricas y alumbrado decorativo' },
+            { icon: <FaCheckCircle />, text: 'Restauración y conservación de monumentos' },
         ]
     }
 ]

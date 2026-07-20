@@ -13,9 +13,8 @@ function validateEmail(email) {
 
 const contactInfo = [
     { icon: <FaMapMarkerAlt />, label: 'Dirección', value: 'Interior del Parque La Rotonda, Portoviejo, Ecuador', color: '#4CAF50' },
-    { icon: <FaMapMarkerAlt />, label: 'Oficina', value: 'Calle 26 de Septiembre, Parque El Mamey', color: '#8BC34A' },
-    { icon: <FaPhone />, label: 'Teléfono', value: '05 370 0250 ext. 9300', href: 'tel:053700250', color: '#2196F3' },
-    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '0978 765 189', href: 'https://wa.me/593978765189', color: '#25D366' },
+    { icon: <FaPhone />, label: 'Teléfono', value: '0978793338', href: 'tel:0978793338', color: '#2196F3' },
+    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '0978793338', href: 'https://wa.me/593978793338', color: '#25D366' },
     { icon: <FaEnvelope />, label: 'Correo', value: 'info@portoparques.gob.ec', href: 'mailto:info@portoparques.gob.ec', color: '#FF9800' },
     { icon: <FaClock />, label: 'Horario', value: 'Lunes a Viernes: 08:00 - 17:00', color: '#9C27B0' },
 ]

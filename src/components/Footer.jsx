@@ -29,9 +29,9 @@ export default function Footer() {
                                 Manteniendo áreas verdes para una ciudad más saludable.
                             </p>
                             <div className="footer__social">
-                                <a href="https://facebook.com/portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+                                <a href="https://www.facebook.com/portoparques/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
                                 <a href="https://tiktok.com/@portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok /></a>
-                                <a href="https://youtube.com/@portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube /></a>
+                                <a href="https://www.youtube.com/@PortoparquesEPOficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube /></a>
                                 <a href="https://twitter.com/portoparquesep" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter /></a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                                 <li><Link to="/noticias">Noticias</Link></li>
                                 <li><Link to="/servicios">Servicios</Link></li>
                                 <li><Link to="/institucion">Institución</Link></li>
-                                <li><Link to="/transparencia">Transparencia</Link></li>
+                                <li><a href="https://transparencia.dpe.gob.ec/entidades/1736" target="_blank" rel="noopener noreferrer">Transparencia LOTAIP</a></li>
                                 <li><Link to="/contacto">Contáctenos</Link></li>
                             </ul>
                         </div>
@@ -53,9 +53,10 @@ export default function Footer() {
                         <div className="footer__section">
                             <h3 className="footer__heading">Nuestros Servicios</h3>
                             <ul className="footer__links">
+                                <li><Link to="/solicitud-servicios">Poda y Tala</Link></li>
                                 <li><Link to="/servicios#areas-verdes">Áreas Verdes</Link></li>
-                                <li><Link to="/servicios#infraestructura">Infraestructura</Link></li>
-                                <li><Link to="/servicios#piletas">Piletas y Monumentos</Link></li>
+                                <li><Link to="/servicios#infraestructura">Infraestructura y Piletas</Link></li>
+                                <li><Link to="/cementerio">Cementerio</Link></li>
                             </ul>
                         </div>
 
@@ -69,11 +70,11 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <FaPhone className="footer__contact-icon" />
-                                    <a href="tel:053700250">05 370 0250 ext. 9300</a>
+                                    <a href="tel:0978793338">0978793338</a>
                                 </li>
                                 <li>
                                     <FaWhatsapp className="footer__contact-icon" />
-                                    <a href="https://wa.me/593978765189" target="_blank" rel="noopener noreferrer">0978 765 189</a>
+                                    <a href="https://wa.me/593978793338" target="_blank" rel="noopener noreferrer">0978793338</a>
                                 </li>
                                 <li>
                                     <FaEnvelope className="footer__contact-icon" />

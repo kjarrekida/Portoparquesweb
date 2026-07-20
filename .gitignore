@@ -20,3 +20,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Proyectos Independientes y Respaldos
+rrhh-portoparques/
+backup_new_poda_publica/
+backup_v1_poda_publica/

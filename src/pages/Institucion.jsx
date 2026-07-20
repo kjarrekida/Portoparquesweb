@@ -145,27 +145,57 @@ export default function Institucion() {
                         )}
 
                         {tab.content.org && (
-                            <div className="institucion__org">
-                                <div className="org-node org-node--root">
-                                    <span>Gerente General</span>
+                            <div className="org-chart">
+                                <div className="org-legend">
+                                    <div className="org-legend-item"><span className="org-legend-color org-gray"></span> PROCESO GOBERNANTE</div>
+                                    <div className="org-legend-item"><span className="org-legend-color org-green"></span> PROCESOS ADJETIVOS DE ASESORÍA</div>
+                                    <div className="org-legend-item"><span className="org-legend-color org-orange"></span> PROCESOS ADJETIVOS DE APOYO</div>
+                                    <div className="org-legend-item"><span className="org-legend-color org-blue"></span> PROCESOS AGREGADORES DE VALOR</div>
                                 </div>
-                                <div className="org-level">
-                                    <div className="org-node">
-                                        <span>Dirección Técnica</span>
+
+                                <div className="org-tree">
+                                    <div className="org-node org-gray">DIRECTORIO</div>
+                                    <div className="org-line-vertical"></div>
+                                    <div className="org-node org-gray">GERENTE GENERAL</div>
+                                    
+                                    <div className="org-asesorias">
+                                        <div className="org-asesoria-left">
+                                            <div className="org-node org-green">ASESORÍA JURÍDICA</div>
+                                            <div className="org-node org-green" style={{marginTop: '20px'}}>COMUNICACIÓN SOCIAL Y RELACIONES PÚBLICAS</div>
+                                        </div>
+                                        <div className="org-asesoria-center">
+                                            <div className="org-line-vertical-long"></div>
+                                        </div>
+                                        <div className="org-asesoria-right">
+                                            <div className="org-node org-green">PLANIFICACIÓN Y CONTROL DE GESTIÓN</div>
+                                        </div>
                                     </div>
-                                    <div className="org-node">
-                                        <span>Dirección Administrativa</span>
+
+                                    <div className="org-branches">
+                                        <div className="org-branch">
+                                            <div className="org-node org-orange">DIRECCIÓN ADMINISTRATIVA Y FINANCIERA</div>
+                                            <div className="org-sub-branches">
+                                                <div className="org-node sub org-orange">GESTIÓN FINANCIERA</div>
+                                                <div className="org-node sub org-orange">GESTIÓN DE TALENTO HUMANO</div>
+                                                <div className="org-node sub org-orange">GESTIÓN ADMINISTRATIVA</div>
+                                            </div>
+                                        </div>
+                                        <div className="org-branch">
+                                            <div className="org-node org-blue">DIRECCIÓN DE MANTENIMIENTO</div>
+                                            <div className="org-sub-branches">
+                                                <div className="org-node sub org-blue">GESTIÓN DE MANTENIMIENTO DE INFRAESTRUCTURA</div>
+                                                <div className="org-node sub org-blue">GESTIÓN DE MANTENIMIENTO DE ÁREAS VERDES</div>
+                                                <div className="org-node sub org-blue">GESTIÓN DE MANTENIMIENTO DE CEMENTERIOS</div>
+                                            </div>
+                                        </div>
+                                        <div className="org-branch">
+                                            <div className="org-node org-blue">DIRECCIÓN COMERCIAL</div>
+                                            <div className="org-sub-branches">
+                                                <div className="org-node sub org-blue">GESTIÓN DE ATRACCIÓN COMERCIAL</div>
+                                                <div className="org-node sub org-blue">GESTIÓN DE INGRESOS INSTITUCIONALES</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="org-node">
-                                        <span>Dirección Financiera</span>
-                                    </div>
-                                </div>
-                                <div className="org-level">
-                                    <div className="org-node org-node--small">Áreas Verdes</div>
-                                    <div className="org-node org-node--small">Infraestructura</div>
-                                    <div className="org-node org-node--small">Talento Humano</div>
-                                    <div className="org-node org-node--small">Contabilidad</div>
-                                    <div className="org-node org-node--small">Presupuesto</div>
                                 </div>
                             </div>
                         )}

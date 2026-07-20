@@ -111,13 +111,13 @@ const rendicionData = {
                         numero: '1',
                         nombre: 'Rendición de Cuentas 2025',
                         tipo: 'video',
-                        videoUrl: 'https://www.youtube.com/embed/_s0v7sUr_D8',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/_s0v7sUr_D8',
                     },
                     {
                         numero: '2',
                         nombre: 'Mesa de Trabajo Rendición de Cuentas 2025',
                         tipo: 'video',
-                        videoUrl: 'https://www.youtube.com/embed/r1CNdrx7IYE',
+                        videoUrl: 'https://www.youtube-nocookie.com/embed/r1CNdrx7IYE',
                     },
                     {
                         numero: '3',
@@ -156,12 +156,78 @@ const rendicionData = {
                     },
                 ],
             },
+            {
+                nombre: 'FASE 4',
+                items: [
+                    {
+                        numero: '1',
+                        nombre: 'Informe CPCCS Rendición de Cuentas 2025',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2025/Fase4/Informe_CPCCS_PPEP_RC2025.pdf',
+                    },
+                    {
+                        numero: '2',
+                        nombre: 'Oficio de Entrega Plan de Trabajo',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2025/Fase4/OFICIO_DE_ENTREGA_DE_PLAN_DE_TRABAJO_PORTOPARQUES%20EP.pdf',
+                    },
+                    {
+                        numero: '3',
+                        nombre: 'Plan de Trabajo 2025',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2025/Fase4/Plan_de_trabajo_EPM_EA_RC_2025-signed-signed.pdf',
+                    },
+                ],
+            },
+        ],
+    },
+    2024: {
+        fases: [
+            {
+                nombre: 'DOCUMENTOS DE RENDICIÓN 2024',
+                items: [
+                    {
+                        numero: '1',
+                        nombre: 'Formulario Rendición de Cuentas 2024',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2024/Formulario_de_rendicion_EmpresasGad2024.pdf',
+                    },
+                    {
+                        numero: '2',
+                        nombre: 'Informe Narrativo Rendición de Cuentas 2024',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2024/INFORME_NARRATIVO_INSTITUCIONAL_RC_2024.pdf',
+                    },
+                ],
+            },
+        ],
+    },
+    2022: {
+        fases: [
+            {
+                nombre: 'DOCUMENTOS DE RENDICIÓN 2022',
+                items: [
+                    {
+                        numero: '1',
+                        nombre: 'Formulario Rendición de Cuentas 2022',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2022/Formulario_EmpresasGad_2022.pdf',
+                    },
+                    {
+                        numero: '2',
+                        nombre: 'Informe Narrativo Rendición de Cuentas 2022',
+                        archivo: 'https://portoparques.gob.ec/docs/rendicion-cuentas/2022/INFORME_DE_GESTIÓN_2022_PORTPARQUESEP_FINAL_signed.pdf',
+                    },
+                ],
+            },
         ],
     },
 }
 
 const rendicionYears = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018]
 const pacYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018]
+
+const pacData = {
+    2026: 'https://portoparques.gob.ec/docs/pacpp/PAC_2026-signed.pdf',
+    2025: 'https://portoparques.gob.ec/docs/pacpp/PAC_2025-signed.pdf',
+    2024: 'https://portoparques.gob.ec/docs/pacpp/PAC_2024-signed.pdf',
+    2023: 'https://portoparques.gob.ec/docs/pacpp/PAC_2023-signed.pdf',
+    2022: 'https://portoparques.gob.ec/docs/pacpp/PAC_2022-signed.pdf',
+}
 
 /* ===================== LOTAIP DROPDOWN ===================== */
 function LOTAIPDropdown() {
@@ -356,25 +422,47 @@ function PACDropdown() {
 
     return (
         <div className="pac-dropdown">
-            {pacYears.map(year => (
-                <div key={year} className="pac-dropdown__year-block">
-                    <button
-                        className={`pac-dropdown__year ${openYear === year ? 'pac-dropdown__year--open' : ''}`}
-                        onClick={() => setOpenYear(openYear === year ? null : year)}
-                    >
-                        <FaCalendarAlt />
-                        <span>PAC {year}</span>
-                        <span className="pac-dropdown__empty-badge">Próximamente</span>
-                        <FaChevronDown className={`pac-dropdown__chevron ${openYear === year ? 'pac-dropdown__chevron--rotated' : ''}`} />
-                    </button>
+            {pacYears.map(year => {
+                const docUrl = pacData[year]
+                return (
+                    <div key={year} className="pac-dropdown__year-block">
+                        <button
+                            className={`pac-dropdown__year ${openYear === year ? 'pac-dropdown__year--open' : ''}`}
+                            onClick={() => setOpenYear(openYear === year ? null : year)}
+                        >
+                            <FaCalendarAlt />
+                            <span>PAC {year}</span>
+                            {!docUrl && <span className="pac-dropdown__empty-badge">Próximamente</span>}
+                            <FaChevronDown className={`pac-dropdown__chevron ${openYear === year ? 'pac-dropdown__chevron--rotated' : ''}`} />
+                        </button>
 
-                    {openYear === year && (
-                        <div className="pac-dropdown__no-content">
-                            <p>Información no disponible aún para este período.</p>
-                        </div>
-                    )}
-                </div>
-            ))}
+                        {openYear === year && docUrl && (
+                            <div className="pac-dropdown__content">
+                                <ul className="rendicion-dropdown__items">
+                                    <li className="rendicion-dropdown__item-group">
+                                        <a
+                                            href={docUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="rendicion-dropdown__item-link"
+                                        >
+                                            <FaFilePdf className="rendicion-dropdown__item-pdf" />
+                                            <span className="rendicion-dropdown__item-name">Descargar PAC {year}</span>
+                                            <FaExternalLinkAlt className="rendicion-dropdown__item-ext" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
+
+                        {openYear === year && !docUrl && (
+                            <div className="pac-dropdown__no-content">
+                                <p>Información no disponible aún para este período.</p>
+                            </div>
+                        )}
+                    </div>
+                )
+            })}
         </div>
     )
 }

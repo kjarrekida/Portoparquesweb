@@ -1,0 +1,194 @@
+.consulta-page {
+    padding: calc(var(--navbar-height) + var(--space-4xl)) var(--space-md) var(--space-4xl);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(46, 125, 50, 0.15) 0%, transparent 60%),
+        var(--gradient-dark);
+}
+
+.consulta-container {
+    background: var(--gradient-card);
+    border: 1px solid var(--white-alpha-10);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.consulta-title {
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    margin-bottom: var(--space-sm);
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.consulta-subtitle {
+    color: var(--dark-200);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-2xl);
+    line-height: 1.6;
+}
+
+.consulta-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.consulta-input {
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--white-alpha-10);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: var(--fw-semibold);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all var(--transition-fast);
+}
+
+.consulta-input:focus {
+    outline: none;
+    border-color: var(--green-400);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(46, 125, 50, 0.2);
+}
+
+.consulta-input::placeholder {
+    color: var(--dark-400);
+    text-transform: none;
+    font-weight: var(--fw-normal);
+}
+
+.consulta-btn {
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--gradient-green);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.consulta-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+}
+
+.consulta-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.consulta-error {
+    color: #ef5350;
+    background: rgba(239, 83, 80, 0.1);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9rem;
+}
+
+.consulta-resultado {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--white-alpha-10);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-align: left;
+}
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-xl);
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--white-alpha-10);
+}
+
+.resultado-header h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.estado-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+
+.estado-ingresado {
+    background: rgba(255, 152, 0, 0.2);
+    color: #ffa726;
+    border: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+.estado-atendido {
+    background: rgba(76, 175, 80, 0.2);
+    color: #66bb6a;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.estado-cancelado {
+    background: rgba(244, 67, 54, 0.2);
+    color: #ef5350;
+    border: 1px solid rgba(244, 67, 54, 0.4);
+}
+
+.resultado-body {
+    padding: var(--space-xl);
+}
+
+.resultado-body p {
+    color: var(--dark-100);
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+}
+
+.resultado-body strong {
+    color: var(--white);
+    margin-right: 8px;
+}
+
+.resultado-nota {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.error-nota {
+    background: rgba(244, 67, 54, 0.05);
+    border-left: 4px solid #ef5350;
+}
+
+.success-nota {
+    background: rgba(76, 175, 80, 0.05);
+    border-left: 4px solid #66bb6a;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
