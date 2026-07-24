@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './DesechosInfecciosos.css';
 
 // URL del Google Apps Script (A reemplazar cuando el usuario lo genere)
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfyc.../exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyOUsmL6tj2oWOAg_Dw_CFwtxmfRapyeqGmJxOji58MzAfb_Je6yv2Df-fV6ZC4azGm/exec';
 
 function DesechosInfecciosos() {
     const [formData, setFormData] = useState({
