@@ -12,6 +12,7 @@ const navLinks = [
         path: '/servicios',
         children: [
             { path: '/solicitud-servicios', label: 'Servicio de Poda/Tala' },
+            { path: '/desechos-infecciosos', label: 'Desechos Infecciosos' },
             { path: '/servicios#infraestructura', label: 'Infraestructura' },
             { path: '/cementerio', label: 'Cementerio' },
         ]

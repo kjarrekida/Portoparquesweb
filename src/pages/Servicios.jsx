@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { FaLeaf, FaTools, FaWater, FaSeedling, FaPaintBrush, FaBolt, FaTint, FaCog, FaTree, FaCheckCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaLeaf, FaTools, FaWater, FaSeedling, FaPaintBrush, FaBolt, FaTint, FaCog, FaTree, FaCheckCircle, FaTrashAlt } from 'react-icons/fa'
 import './Servicios.css'
 
 const servicios = [
@@ -29,6 +30,20 @@ const servicios = [
             { icon: <FaTools />, text: 'Soldadura y reparación de estructuras' },
             { icon: <FaBolt />, text: 'Instalaciones eléctricas y alumbrado decorativo' },
             { icon: <FaCheckCircle />, text: 'Restauración y conservación de monumentos' },
+        ]
+    },
+    {
+        id: 'desechos-infecciosos',
+        icon: <FaTrashAlt />,
+        title: 'Recolección de Desechos Infecciosos',
+        color: '#E91E63',
+        description: 'Servicio especializado para el manejo seguro de residuos peligrosos generados por establecimientos de salud, clínicas, veterinarias y afines, protegiendo el bienestar de Portoviejo.',
+        link: '/desechos-infecciosos',
+        linkText: 'Registrar Establecimiento',
+        items: [
+            { icon: <FaCheckCircle />, text: 'Recolección programada y segura' },
+            { icon: <FaCheckCircle />, text: 'Manejo especializado de residuos peligrosos' },
+            { icon: <FaCheckCircle />, text: 'Cumplimiento de normativas ambientales' }
         ]
     }
 ]
@@ -76,6 +91,13 @@ export default function Servicios() {
                                         </li>
                                     ))}
                                 </ul>
+                                {servicio.link && (
+                                    <div style={{ marginTop: '25px' }}>
+                                        <Link to={servicio.link} className="btn-primary" style={{ backgroundColor: servicio.color }}>
+                                            {servicio.linkText}
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="servicios__visual glass-card">

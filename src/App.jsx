@@ -10,6 +10,7 @@ import Transparencia from './pages/Transparencia'
 import Contacto from './pages/Contacto'
 import Cementerio from './pages/Cementerio'
 import PodaPublica from './pages/PodaPublica'
+import DesechosInfecciosos from './pages/DesechosInfecciosos'
 import ConsultaTramite from './pages/ConsultaTramite'
 import AdminDashboard from './pages/AdminDashboard'
 import RastreoCiudadano from './pages/RastreoCiudadano'
@@ -62,6 +63,7 @@ function App() {
                     <Route path="/contacto" element={<Contacto />} />
                     <Route path="/cementerio" element={<Cementerio />} />
                     <Route path="/solicitud-servicios" element={<PodaPublica />} />
+                    <Route path="/desechos-infecciosos" element={<DesechosInfecciosos />} />
                     <Route path="/poda-publica" element={<Navigate to="/solicitud-servicios" replace />} />
                     <Route path="/consulta-tramite" element={<ConsultaTramite />} />
                     <Route path="/rastreo" element={<RastreoCiudadano />} />
