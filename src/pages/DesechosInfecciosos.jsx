@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FaCheckCircle, FaCloudUploadAlt, FaExclamationTriangle, FaFilePdf, FaSyncAlt } from 'react-icons/fa';
+import { Turnstile } from '@marsidev/react-turnstile';
 import './DesechosInfecciosos.css';
 
 // URL del Google Apps Script
@@ -113,6 +114,9 @@ export default function DesechosInfecciosos() {
     // Honeypot — campo trampa invisible para bots
     const [honeypot, setHoneypot] = useState('');
 
+    // Cloudflare Turnstile
+    const [turnstileToken, setTurnstileToken] = useState('');
+
     const [fileData, setFileData] = useState({ name: '', mimeType: '', base64: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -202,6 +206,10 @@ export default function DesechosInfecciosos() {
             e.autorizacion = 'Debe aceptar la autorización de uso de datos';
         }
 
+        if (!turnstileToken) {
+            e.turnstile = 'Complete la verificación de seguridad para continuar';
+        }
+
         return e;
     };
 
@@ -234,7 +242,9 @@ export default function DesechosInfecciosos() {
                 archivoMimeType: fileData.mimeType,
                 archivoBase64: fileData.base64,
                 // Enviar honeypot al backend para doble verificación
-                _hp_field: honeypot
+                _hp_field: honeypot,
+                // Cloudflare Turnstile token
+                turnstileToken: turnstileToken
             };
 
             const response = await fetch(SCRIPT_URL, {
@@ -269,6 +279,7 @@ export default function DesechosInfecciosos() {
         setGlobalError('');
         setErrors({});
         setHoneypot('');
+        setTurnstileToken('');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
@@ -468,6 +479,20 @@ export default function DesechosInfecciosos() {
                                             <span>Autorizo expresamente el uso y tratamiento de los datos personales proporcionados en este formulario, con fines de registro, contacto administrativo y coordinación del servicio de recolección de desechos infecciosos.</span>
                                         </label>
                                         {errors.autorizacion && <span className="desechos__error-msg" style={{ marginTop: '8px' }}>{errors.autorizacion}</span>}
+                                    </div>
+
+                                    {/* Cloudflare Turnstile */}
+                                    <div className={`desechos__field ${errors.turnstile ? 'desechos__field--error' : ''}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1rem', marginBottom: '1rem' }}>
+                                        <Turnstile 
+                                            siteKey="0x4AAAAAAD837MC5ojULhvqg" 
+                                            onSuccess={(token) => {
+                                                setTurnstileToken(token);
+                                                if (errors.turnstile) setErrors(prev => ({ ...prev, turnstile: '' }));
+                                            }}
+                                            onError={() => setErrors(prev => ({ ...prev, turnstile: 'Error de verificación de seguridad. Recargue la página.' }))}
+                                            options={{ theme: 'dark' }}
+                                        />
+                                        {errors.turnstile && <span className="desechos__error-msg" style={{ marginTop: '8px' }}>{errors.turnstile}</span>}
                                     </div>
 
                                     {/* Botón de envío */}
