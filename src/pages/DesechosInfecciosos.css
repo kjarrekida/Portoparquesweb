@@ -321,6 +321,35 @@
     transform: translateY(-2px);
 }
 
+/* Field Error States */
+.desechos__field--error input,
+.desechos__field--error select {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.desechos__error-msg {
+    color: #fca5a5;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.desechos__checkbox-wrapper--error {
+    border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+/* Spin animation for loading icon */
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .desechos__form-row {

@@ -135,6 +135,9 @@ export default function PodaPublica() {
     const [isDragOverPdf, setIsDragOverPdf] = useState(false)
     const [showTalaModal, setShowTalaModal] = useState(false)
 
+    // Honeypot — campo trampa invisible para bots
+    const [honeypot, setHoneypot] = useState('')
+
     // Animations observer
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -334,6 +337,12 @@ export default function PodaPublica() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setGlobalError('')
+
+        // Honeypot: Si el campo oculto tiene texto, es un bot → rechazar silenciosamente
+        if (honeypot) {
+            setSubmitted(true)
+            return
+        }
 
         const validationErrors = validate()
         if (Object.keys(validationErrors).length > 0) {
@@ -630,6 +639,20 @@ export default function PodaPublica() {
                                     )}
 
                                     <form className="poda__form" onSubmit={handleSubmit} noValidate>
+                                        {/* 🍯 HONEYPOT — Campo trampa invisible para bots */}
+                                        <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                                            <label htmlFor="company_fax">No llene este campo</label>
+                                            <input
+                                                type="text"
+                                                id="company_fax"
+                                                name="company_fax"
+                                                value={honeypot}
+                                                onChange={(e) => setHoneypot(e.target.value)}
+                                                tabIndex={-1}
+                                                autoComplete="off"
+                                            />
+                                        </div>
+
                                         {/* ===== Tipo de Servicio ===== */}
                                         <div className="poda__field">
                                             <label>
